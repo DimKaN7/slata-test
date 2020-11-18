@@ -1,0 +1,31 @@
+<div class="candidates-list">
+  <div class="candidates-list__content">
+    <h3>Список соискателей</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <td>ФИО</td>
+          <td>Телефонный номер</td>
+          <td>Позиция</td>
+          <td>Дата выдачи задания</td>
+          <td>Время выполнения</td>
+          <td>Нанимающий работник</td>
+          <td>Дата выполнения задачи</td>
+          <td>Руководитель</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of service.candidatesList" (click)="onRowClick(c)">
+          <td>{{c.FullName}}</td>
+          <td>{{c.PhoneNumber}}</td>
+          <td>{{c.Position}}</td>
+          <td>{{c.TaskIssueDate}}</td>
+          <td>{{c.TimeLimitation}}</td>
+          <td>{{c.HiringEmployee}}</td>
+          <td>{{c.TaskCompleteDate || '-'}}</td>
+          <td>{{c.Mentor || '-'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

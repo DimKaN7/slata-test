@@ -1,0 +1,100 @@
+<form #form="ngForm" autocomplete="off" class="cadindate-info" 
+  (submit)="onSubmit(form)" [style]="{height: service.editingData ? '381px' : '311px'}">
+  <div class="row-container">
+    <div class="row">
+      <label for="FullName">ФИО претендента</label>
+      <div class="input-wrapper">
+        <input autocomplete="off" name="FullName" 
+        [(ngModel)]="service.formData.FullName" 
+        required/>
+      </div>
+    </div>
+  
+    <div class="row split">
+      <div>
+        <label for="PhoneNumber">Телефонный номер</label>
+        <div class="input-wrapper">
+          <input autocomplete="off" 
+          name="PhoneNumber" 
+          [(ngModel)]="service.formData.PhoneNumber" 
+          required/>
+        </div>
+      </div>
+      <div>
+        <label for="Position">Позиция</label>
+        <div class="input-wrapper">
+          <input autocomplete="off" 
+          name="Position" 
+          [(ngModel)]="service.formData.Position" 
+          required/>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row split">
+      <div>
+        <label for="TaskIssueDate">Дата выдачи задания</label>
+        <div class="input-wrapper">
+          <input autocomplete="off" 
+          name="TaskIssueDate" 
+          [(ngModel)]="service.formData.TaskIssueDate" 
+          required/>
+        </div>
+      </div>
+      <div>
+        <label for="TimeLimitation">Время выполнения</label>
+        <div class="input-wrapper">
+          <input autocomplete="off" 
+          name="TimeLimitation" 
+          [(ngModel)]="service.formData.TimeLimitation" 
+          required/>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <label for="HiringEmployee">Нанимающий работник</label>
+      <div class="input-wrapper">
+        <input autocomplete="off" 
+        name="HiringEmployee" 
+        [(ngModel)]="service.formData.HiringEmployee" 
+        required/>
+      </div>
+    </div>
+
+    <div class="row split">
+      <div>
+        <label for="TaskCompleteDate">Дата выполнения задания</label>
+        <div class="input-wrapper">
+          <input autocomplete="off" 
+            name="TaskCompleteDate" 
+            [(ngModel)]="service.formData.TaskCompleteDate" 
+            />
+        </div>
+      </div>
+      <div>
+        <label for="Mentor">Руководитель</label>
+        <div class="input-wrapper">
+          <input autocomplete="off" 
+            name="Mentor" 
+            [(ngModel)]="service.formData.Mentor" 
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="submit-button" type="submit" [disabled]="form.invalid">
+      {{service.editingData ? 'Сохранить' : 'Добавить'}}
+    </button>
+    <button class="cancel-button" type="reset"
+      (click)="onCancelClick(form)">
+      Отменить
+    </button>
+    <button class="delete-button" *ngIf="service.editingData"
+      (click)="onDeleteClick(form)">
+      Удалить
+    </button>
+  </div>
+</form>

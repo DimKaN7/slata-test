@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\N7_SPECTR\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\N7_SPECTR\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ]
+  }
+}
